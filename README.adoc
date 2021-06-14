@@ -1,3 +1,5 @@
 = Code Description
 
 An example of a flawed C++ code. It is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
+
+This repository will be forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
