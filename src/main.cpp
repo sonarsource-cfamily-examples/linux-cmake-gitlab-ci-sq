@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     cout << "argv not null\n";; // intentional extra-semicolon
   }
   if (argv == nullptr) {
-    return *argv; // intentional nullptr dereference
+    return **argv; // intentional nullptr dereference
   }
 
   return 0;
