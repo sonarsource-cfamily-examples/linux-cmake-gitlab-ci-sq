@@ -3,4 +3,4 @@
 An example of a flawed C++ code. It is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
 
 This repository is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
-The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or sonarcloud.io/[SonarCloud].
+The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
