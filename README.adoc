@@ -1,6 +1,29 @@
 = Code Description
 
-An example of a flawed C++ code. It is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
+An example of a flawed C++ code. The https://github.com/sc-sq-c-family-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
 
-This repository is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
+ The https://github.com/sc-sq-c-family-examples/code[code repository] is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
+
+== Forking the code repository
+Since GitHub disallows forking of a repository within the same organization, here is the equivalent in `git` commands (on the example of `linux-cmake-gh-actions`):
+
+Clone the newly created repository:
+----
+git clone gh:sc-sq-c-family-examples/linux-cmake-gh-actions
+cd linux-cmake-gh-actions
+----
+Add the https://github.com/sc-sq-c-family-examples/code[code repository] as a second remote named `code`:
+----
+git remote add code git@github.com:sc-sq-c-family-examples/code
+----
+Get the code:
+----
+git pull code master
+----
+If the contents of the https://github.com/sc-sq-c-family-examples/code[code repository] changes, you can pull the changes with the last command.
+
+Push the changes to the custom repository:
+----
+git push origin master
+----
