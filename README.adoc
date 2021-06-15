@@ -6,17 +6,20 @@ The https://github.com/sc-sq-c-family-examples/code[code repository] is forked i
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
 
 You can find examples for:
+
 * https://github.com/sc-sq-c-family-examples?q=linux[Linux]
 * https://github.com/sc-sq-c-family-examples?q=macos[MacOS]
 * https://github.com/sc-sq-c-family-examples?q=windows[Windows]
 
 Using the following build systems:
+
 * https://github.com/sc-sq-c-family-examples?q=cmake[CMake]
 * https://github.com/sc-sq-c-family-examples?q=autotools[GNU Autotools]
 * https://github.com/sc-sq-c-family-examples?q=xcode[Xcode]
 * https://github.com/sc-sq-c-family-examples?q=msbuild[MSBuild]
 
 Running on the following CI services:
+
 * https://github.com/sc-sq-c-family-examples?q=azure[Azure DevOps]
 * https://github.com/sc-sq-c-family-examples?q=gh-actions[GitHub Actions]
 * https://github.com/sc-sq-c-family-examples?q=travis[Travis]
@@ -25,6 +28,7 @@ Running on the following CI services:
 * https://github.com/sc-sq-c-family-examples?q=bitbucket[BitBucket Pipelines]
 
 Configured for analysis on:
+
 * https://github.com/sc-sq-c-family-examples?q=-sq[SonarQube]
 * https://github.com/sc-sq-c-family-examples?q=-sc[SonarCloud]
 
