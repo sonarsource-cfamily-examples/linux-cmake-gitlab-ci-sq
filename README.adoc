@@ -2,6 +2,13 @@
 
 A build of the https://github.com/sc-sq-c-family-examples/code[code repository] on a Linux platform using CMake build system.
 
+To build the code run:
+----
+mkdir build && cd build
+cmake ..
+make
+----
+
 = Code Description
 
 An example of a flawed C++ code. The https://github.com/sc-sq-c-family-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
