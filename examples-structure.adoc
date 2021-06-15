@@ -15,7 +15,7 @@ Since GitHub disallows forking of a repository within the same organization, her
 
 Clone the newly created repository:
 ----
-git clone gh:sc-sq-c-family-examples/linux-cmake
+git clone git@github.com:sc-sq-c-family-examples/linux-cmake
 cd linux-cmake
 ----
 Add the https://github.com/sc-sq-c-family-examples/code[code repository] as a second remote named `code`:
@@ -37,7 +37,7 @@ This will enable the flow of changes from the https://github.com/sc-sq-c-family-
 
 To make the changes flow further to the https://github.com/sc-sq-c-family-examples/linux-cmake-azure-sc[linux-cmake-azure-sc] repository:
 ----
-git clone gh:sc-sq-c-family-examples/linux-cmake-azure-sc
+git clone git@github.com:sc-sq-c-family-examples/linux-cmake-azure-sc
 cd linux-cmake-azure-sc
 git remote add code git@github.com:sc-sq-c-family-examples/linux-cmake
 git pull code main
