@@ -27,3 +27,7 @@ src/.deps/
 src/Makefile.in
 src/*.o
 src/sonar_scanner_example
+
+# Visual Studio
+out
+.vs
