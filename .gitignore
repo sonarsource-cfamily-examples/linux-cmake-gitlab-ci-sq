@@ -1,12 +1,29 @@
+Testing
+install_manifest.txt
+_deps
+
+# CMake:
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
-Testing
-Makefile
 cmake_install.cmake
-install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
-_deps
 build/
+
+# GNU Autotools:
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+src/.deps/
+src/Makefile.in
+src/*.o
+src/sonar_scanner_example
