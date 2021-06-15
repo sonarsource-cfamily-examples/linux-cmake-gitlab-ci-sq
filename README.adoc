@@ -16,25 +16,32 @@ An example of a flawed C++ code. The https://github.com/sc-sq-c-family-examples/
 The https://github.com/sc-sq-c-family-examples/code[code repository] is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
 
-== Forking the code repository
-Since GitHub disallows forking of a repository within the same organization, here is the equivalent in `git` commands (on the example of `linux-cmake-gh-actions`):
+You can find examples for:
 
-Clone the newly created repository:
-----
-git clone gh:sc-sq-c-family-examples/linux-cmake-gh-actions
-cd linux-cmake-gh-actions
-----
-Add the https://github.com/sc-sq-c-family-examples/code[code repository] as a second remote named `code`:
-----
-git remote add code git@github.com:sc-sq-c-family-examples/code
-----
-Get the code:
-----
-git pull code master
-----
-If the contents of the https://github.com/sc-sq-c-family-examples/code[code repository] changes, you can pull the changes with the last command.
+* https://github.com/sc-sq-c-family-examples?q=linux[Linux]
+* https://github.com/sc-sq-c-family-examples?q=macos[MacOS]
+* https://github.com/sc-sq-c-family-examples?q=windows[Windows]
 
-Push the changes to the custom repository:
-----
-git push origin master
-----
+Using the following build systems:
+
+* https://github.com/sc-sq-c-family-examples?q=cmake[CMake]
+* https://github.com/sc-sq-c-family-examples?q=autotools[GNU Autotools]
+* https://github.com/sc-sq-c-family-examples?q=xcode[Xcode]
+* https://github.com/sc-sq-c-family-examples?q=msbuild[MSBuild]
+
+Running on the following CI services:
+
+* https://github.com/sc-sq-c-family-examples?q=azure[Azure DevOps]
+* https://github.com/sc-sq-c-family-examples?q=gh-actions[GitHub Actions]
+* https://github.com/sc-sq-c-family-examples?q=travis[Travis]
+* https://github.com/sc-sq-c-family-examples?q=jenkins[Jenkins]
+* https://github.com/sc-sq-c-family-examples?q=gitlab[GitLab CI]
+* https://github.com/sc-sq-c-family-examples?q=bitbucket[BitBucket Pipelines]
+
+Configured for analysis on:
+
+* https://github.com/sc-sq-c-family-examples?q=-sq[SonarQube]
+* https://github.com/sc-sq-c-family-examples?q=-sc[SonarCloud]
+
+
+See link:./examples-structure.adoc[examples-structure.adoc] for a description of the structure of https://github.com/sc-sq-c-family-examples[this GitHub organization] and the relations between its different repositories.
