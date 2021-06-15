@@ -31,3 +31,5 @@ src/sonar_scanner_example
 # Visual Studio
 out
 .vs
+Debug
+Release
