@@ -33,3 +33,7 @@ out
 .vs
 Debug
 Release
+
+# XCode
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
