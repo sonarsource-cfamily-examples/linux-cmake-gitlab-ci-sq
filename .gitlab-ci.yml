@@ -17,7 +17,7 @@ get-sonar-binaries:
   stage: .pre
   script:
     # Download sonar-scanner
-    - curl 'https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip' --output sonar-scanner-cli-4.2.0.1873-linux.zip
+    - curl "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip" --output sonar-scanner-cli-4.2.0.1873-linux.zip
     - unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
     - mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux sonar-scanner
     # Download build-wrapper
