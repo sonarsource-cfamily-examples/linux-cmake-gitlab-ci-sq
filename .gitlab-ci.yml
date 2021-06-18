@@ -17,18 +17,19 @@ get-sonar-binaries:
   stage: .pre
   script:
     # Download sonar-scanner
-    - curl "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip" --output sonar-scanner-cli-4.2.0.1873-linux.zip
-    - unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
+    - curl -sSLo sonar-scanner.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip"
+    - unzip -o sonar-scanner.zip 
     - mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux sonar-scanner
     # Download build-wrapper
-    - curl "${SONAR_SERVER_URL}/static/cpp/build-wrapper-linux-x86.zip" --output build-wrapper-linux-x86.zip
-    - unzip build-wrapper-linux-x86.zip
+    - curl -sSLo build-wrapper.zip "${SONAR_SERVER_URL}/static/cpp/build-wrapper-linux-x86.zip" 
+    - unzip -o build-wrapper.zip
+    - mv build-wrapper-linux-x86 build-wrapper
   cache:
     policy: push
     key: "${CI_COMMIT_SHORT_SHA}"
     paths:
-      - build-wrapper-linux-x86/ # to share the build-wrapper between jobs
-      - sonar-scanner/           # to share the sonar-scanner between jobs
+      - build-wrapper/ # to share the build-wrapper between jobs
+      - sonar-scanner/ # to share the sonar-scanner between jobs
 
 build:
   stage: build
@@ -40,7 +41,7 @@ build:
     - mkdir build
     - cmake -S . -B build
     # run the build inside the build wrapper
-    - build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir "${BUILD_WRAPPER_OUT_DIR}" cmake --build build/ --config Release
+    - build-wrapper/build-wrapper-linux-x86-64 --out-dir "${BUILD_WRAPPER_OUT_DIR}" cmake --build build/ --config Release
   artifacts:
     paths:
       - build/sonar_scanner_example
@@ -48,7 +49,7 @@ build:
     policy: pull-push
     key: "${CI_COMMIT_SHORT_SHA}"
     paths:
-      - build-wrapper-linux-x86/
+      - build-wrapper/
       - sonar-scanner/
       - "${BUILD_WRAPPER_OUT_DIR}"
 
