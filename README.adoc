@@ -1,3 +1,41 @@
+= C++ example project scanned on SonarCloud using Azure Pipelines
+// URIs:
+:uri-qg-status: https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gitlab-ci-sc
+:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sc-sq-c-family-examples_linux-cmake-gitlab-ci-sc&metric=alert_status
+:uri-build-status: https://gitlab.com/tomasz.kaminski/linux-cmake-gitlab-ci-scs/-/commits/main
+:img-build-status: https://gitlab.com/tomasz.kaminski/linux-cmake-gitlab-ci-scs/badges/main/pipeline.svg
+
+image:{img-build-status}[Build Status, link={uri-build-status}]
+image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
+
+*This project is analysed on https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_linux-cmake-gitlab-ci-sc[SonarCloud]!*
+
+It is very easy to analyze a C/C++/Objective-C project with SonarCloud https://sonarcloud.io/documentation/getting-started/gitlab/[on GitLab CI]:
+
+. Create a `sonar-project.properties` file to store your configuration
+. In your `.gitlab-ci.yml` file:
+.. As the `.pre` stage  step:
+... Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
+... Download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
+... Push both binaries to cache, so they can be used in next step
+.. As part of the `build` stage: 
+... Install cmake package
+... Pull Sonar Scanner and Build Wrapper from cache
+... Wrap your compilation with the Build Wrapper
+... Push Sonar Scanner and build Wrapper output directory to the cache
+.. As part of the `post` step:
+... Pull build wrapper output and Sonar Scanner from cache
+... Run `sonar-scanner` on build wrapper output
+. Make sure that you have your token stored as a CI variable in your project (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
+
+
+You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:[.gitlab-ci.yml] to see it in practice.
+
+= Documentation
+
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+- https://sonarcloud.io/documentation/getting-started/azure-devops/[Documentation of using SonarCloud with Azure DevOps]
+
 = Linux\CMake
 
 A build of the https://github.com/sc-sq-c-family-examples/code[code repository] on a Linux platform using CMake build system.
