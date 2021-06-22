@@ -29,7 +29,7 @@ It is very easy to analyze a C/C++/Objective-C project with SonarCloud https://s
 . Make sure that you have your token stored as a CI variable in your project (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
 
 
-You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:[.gitlab-ci.yml] to see it in practice.
+You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.gitlab-ci.yml[.gitlab-ci.yml] to see it in practice.
 
 = Documentation
 
