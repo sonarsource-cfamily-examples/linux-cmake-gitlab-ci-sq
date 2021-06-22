@@ -8,12 +8,12 @@ variables:
   
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
-  # note that  SONAR_TOKEN are transmitted to the environament through Gitlab CI
+  # note that SONAR_TOKEN is transmitted to the environment through Gitlab CI
 
 get-sonar-binaries:
-  # this job sdownloads ans unpacks the build-wrapper and the sonar-scanner
+  # this job download and unpacks the build-wrapper and the sonar-scanner
   # in this example it is done for every build.
-  # This can be optimized by caching the files or better, by including them, in the build docker image
+  # This can be optimized by caching the files or better, by including them, in the build docker image.
   stage: .pre
   script:
     # Download sonar-scanner
