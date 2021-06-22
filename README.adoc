@@ -14,7 +14,7 @@ It is very easy to analyze a C/C++/Objective-C project with SonarCloud https://s
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.gitlab-ci.yml` file:
-.. As the `.pre` stage  stage:
+.. As the `.pre` stage:
 ... Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
 ... Download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
 ... Push both binaries to cache, so they can be used in next step
