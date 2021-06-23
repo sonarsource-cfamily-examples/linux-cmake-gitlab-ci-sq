@@ -17,7 +17,7 @@ It is very easy to analyze a C/C++/Objective-C project with SonarQube https://do
 .. As part of the `.post` stage:
 ... Pull build wrapper output and Sonar Scanner from cache
 ... Run `sonar-scanner` on build wrapper output
-. Make sure that you have your token stored as a CI variable in your project (`SONAR_TOKEN`). You can request new tokens using https://sonarcloud.io/account/security/[Account/Security page].
+. Make sure that you have your token stored as a CI variable in your project (`SONAR_TOKEN`). You can https://docs.sonarqube.org/latest/user-guide/user-token/[generate and use] new tokens in SonarQube.
 
 
 You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:.gitlab-ci.yml[.gitlab-ci.yml] to see it in practice. Please be aware that the SonarQube server URL is not completed in this .gitlab-ci.yml example.
