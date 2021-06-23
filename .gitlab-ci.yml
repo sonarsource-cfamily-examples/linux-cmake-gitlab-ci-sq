@@ -1,9 +1,9 @@
 image: gcc
 
 variables:
-  SONAR_SERVER_URL: "https://sonarcloud.io" 
+  SONAR_SERVER_URL: <SONARQUBE_HOST_URL> # Replace <SONARQUBE_HOST_URL> with your SonarQube server URL 
   SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
-                                    # https://sonarcloud.io/documentation/analysis/scan/sonarscanner/ 
+                                    # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/ 
   BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
   
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
@@ -53,7 +53,7 @@ build:
       - sonar-scanner/
       - "${BUILD_WRAPPER_OUT_DIR}"
 
-sonarcloud-check:
+sonarqube-check:
   stage: .post
   cache:
     policy: pull
