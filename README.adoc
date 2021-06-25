@@ -29,7 +29,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Linux\CMake
 
-A build of the https://github.com/sc-sq-c-family-examples/code[code repository] on a Linux platform using CMake build system.
+A build of the https://github.com/sonarsource-cfamily-examples/code[code repository] on a Linux platform using CMake build system.
 
 To build the code run:
 ----
@@ -40,37 +40,37 @@ make
 
 = Code Description
 
-An example of a flawed C++ code. The https://github.com/sc-sq-c-family-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
+An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
 
-The https://github.com/sc-sq-c-family-examples/code[code repository] is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
+The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
 
 You can find examples for:
 
-* https://github.com/sc-sq-c-family-examples?q=linux[Linux]
-* https://github.com/sc-sq-c-family-examples?q=macos[MacOS]
-* https://github.com/sc-sq-c-family-examples?q=windows[Windows]
+* https://github.com/sonarsource-cfamily-examples?q=linux[Linux]
+* https://github.com/sonarsource-cfamily-examples?q=macos[MacOS]
+* https://github.com/sonarsource-cfamily-examples?q=windows[Windows]
 
 Using the following build systems:
 
-* https://github.com/sc-sq-c-family-examples?q=cmake[CMake]
-* https://github.com/sc-sq-c-family-examples?q=autotools[GNU Autotools]
-* https://github.com/sc-sq-c-family-examples?q=xcode[Xcode]
-* https://github.com/sc-sq-c-family-examples?q=msbuild[MSBuild]
+* https://github.com/sonarsource-cfamily-examples?q=cmake[CMake]
+* https://github.com/sonarsource-cfamily-examples?q=autotools[GNU Autotools]
+* https://github.com/sonarsource-cfamily-examples?q=xcode[Xcode]
+* https://github.com/sonarsource-cfamily-examples?q=msbuild[MSBuild]
 
 Running on the following CI services:
 
-* https://github.com/sc-sq-c-family-examples?q=azure[Azure DevOps]
-* https://github.com/sc-sq-c-family-examples?q=gh-actions[GitHub Actions]
-* https://github.com/sc-sq-c-family-examples?q=travis[Travis]
-* https://github.com/sc-sq-c-family-examples?q=jenkins[Jenkins]
-* https://github.com/sc-sq-c-family-examples?q=gitlab[GitLab CI]
-* https://github.com/sc-sq-c-family-examples?q=bitbucket[BitBucket Pipelines]
+* https://github.com/sonarsource-cfamily-examples?q=azure[Azure DevOps]
+* https://github.com/sonarsource-cfamily-examples?q=gh-actions[GitHub Actions]
+* https://github.com/sonarsource-cfamily-examples?q=travis[Travis]
+* https://github.com/sonarsource-cfamily-examples?q=jenkins[Jenkins]
+* https://github.com/sonarsource-cfamily-examples?q=gitlab[GitLab CI]
+* https://github.com/sonarsource-cfamily-examples?q=bitbucket[BitBucket Pipelines]
 
 Configured for analysis on:
 
-* https://github.com/sc-sq-c-family-examples?q=-sq[SonarQube]
-* https://github.com/sc-sq-c-family-examples?q=-sc[SonarCloud]
+* https://github.com/sonarsource-cfamily-examples?q=-sq[SonarQube]
+* https://github.com/sonarsource-cfamily-examples?q=-sc[SonarCloud]
 
 
-See link:./examples-structure.adoc[examples-structure.adoc] for a description of the structure of https://github.com/sc-sq-c-family-examples[this GitHub organization] and the relations between its different repositories.
+See link:./examples-structure.adoc[examples-structure.adoc] for a description of the structure of https://github.com/sonarsource-cfamily-examples[this GitHub organization] and the relations between its different repositories.
