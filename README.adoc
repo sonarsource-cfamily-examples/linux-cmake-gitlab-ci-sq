@@ -13,7 +13,7 @@ make
 
 An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
 
-The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sc-sq-c-family-examples[this collection] to add a specific build system, platform, and CI.
+The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sonarsource-cfamily-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
 
 You can find examples for:
