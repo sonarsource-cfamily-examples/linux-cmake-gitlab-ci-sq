@@ -1,45 +1,45 @@
 
 = Structure of the Examples Org
-https://github.com/sc-sq-c-family-examples[This GitHub organization] contains a collection of example configurations for different platforms, build systems, and CI services all with one goal: analyze the code on https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
+https://github.com/sonarsource-cfamily-examples[This GitHub organization] contains a collection of example configurations for different platforms, build systems, and CI services all with one goal: analyze the code on https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
 
 The repositories form a hierarchy.
 
-* The hierarchy starts from the https://github.com/sc-sq-c-family-examples/code[code-only repository] that contains the flawed code and the common boilerplate files.
-* The second level of hierarchy are OS\build-system repositories, such as https://github.com/sc-sq-c-family-examples/windows-msbuild[windows-msbuild] or https://github.com/sc-sq-c-family-examples/linux-cmake[linux-cmake]. They take the code from the code-only repository as is and add the build configuration files for the corresponding OS and build system.
-* The last level of hierarchy are the CI-enabled repositoroes (for example, https://github.com/sc-sq-c-family-examples/linux-cmake-azure-sc[linux-cmake-azure-sc]). These repositories build upon the repositories with configured builds and add a CI configuration for popular CI services. In the CI config they set up a SonarCloud (repository name ending in `-sc`) or a SonarQube (repository name ending in `-sq`) connection.
+* The hierarchy starts from the https://github.com/sonarsource-cfamily-examples/code[code-only repository] that contains the flawed code and the common boilerplate files.
+* The second level of hierarchy are OS\build-system repositories, such as https://github.com/sonarsource-cfamily-examples/windows-msbuild[windows-msbuild] or https://github.com/sonarsource-cfamily-examples/linux-cmake[linux-cmake]. They take the code from the code-only repository as is and add the build configuration files for the corresponding OS and build system.
+* The last level of hierarchy are the CI-enabled repositoroes (for example, https://github.com/sonarsource-cfamily-examples/linux-cmake-azure-sc[linux-cmake-azure-sc]). These repositories build upon the repositories with configured builds and add a CI configuration for popular CI services. In the CI config they set up a SonarCloud (repository name ending in `-sc`) or a SonarQube (repository name ending in `-sq`) connection.
 
-Here is an example dependency path: https://github.com/sc-sq-c-family-examples/code[code] -> https://github.com/sc-sq-c-family-examples/linux-cmake[linux-cmake] -> https://github.com/sc-sq-c-family-examples/linux-cmake-azure-sc[linux-cmake-azure-sc].
+Here is an example dependency path: https://github.com/sonarsource-cfamily-examples/code[code] -> https://github.com/sonarsource-cfamily-examples/linux-cmake[linux-cmake] -> https://github.com/sonarsource-cfamily-examples/linux-cmake-azure-sc[linux-cmake-azure-sc].
 
 == Forking the code repository
 Since GitHub disallows forking of a repository within the same organization, here is the equivalent in `git` commands (on the example of `linux-cmake`):
 
 Clone the newly created repository:
 ----
-git clone git@github.com:sc-sq-c-family-examples/linux-cmake
+git clone git@github.com:sonarsource-cfamily-examples/linux-cmake
 cd linux-cmake
 ----
-Add the https://github.com/sc-sq-c-family-examples/code[code repository] as a second remote named `code`:
+Add the https://github.com/sonarsource-cfamily-examples/code[code repository] as a second remote named `code`:
 ----
-git remote add code git@github.com:sc-sq-c-family-examples/code
+git remote add code git@github.com:sonarsource-cfamily-examples/code
 ----
 Get the code:
 ----
 git pull code main
 ----
-If the contents of the https://github.com/sc-sq-c-family-examples/code[code repository] changes, you can pull the changes with the last command.
+If the contents of the https://github.com/sonarsource-cfamily-examples/code[code repository] changes, you can pull the changes with the last command.
 
 Push the changes to the custom repository:
 ----
 git push origin main
 ----
 
-This will enable the flow of changes from the https://github.com/sc-sq-c-family-examples/code[code] repository to the https://github.com/sc-sq-c-family-examples/linux-cmake[linux-cmake] repository (the first arrow in the example above).
+This will enable the flow of changes from the https://github.com/sonarsource-cfamily-examples/code[code] repository to the https://github.com/sonarsource-cfamily-examples/linux-cmake[linux-cmake] repository (the first arrow in the example above).
 
-To make the changes flow further to the https://github.com/sc-sq-c-family-examples/linux-cmake-azure-sc[linux-cmake-azure-sc] repository:
+To make the changes flow further to the https://github.com/sonarsource-cfamily-examples/linux-cmake-azure-sc[linux-cmake-azure-sc] repository:
 ----
-git clone git@github.com:sc-sq-c-family-examples/linux-cmake-azure-sc
+git clone git@github.com:sonarsource-cfamily-examples/linux-cmake-azure-sc
 cd linux-cmake-azure-sc
-git remote add code git@github.com:sc-sq-c-family-examples/linux-cmake
+git remote add code git@github.com:sonarsource-cfamily-examples/linux-cmake
 git pull code main
 git push origin main
 ----
