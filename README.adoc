@@ -1,6 +1,6 @@
 = C++ example project scanned on SonarQube using GitLab CI
 
-It is very easy to analyze a C/C++/Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
+It is very easy to analyze a C, C++ and Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
 
 . Create a `sonar-project.properties` file to store your configuration
 . In your `.gitlab-ci.yml` file:
@@ -24,7 +24,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
 
 = Linux\CMake
