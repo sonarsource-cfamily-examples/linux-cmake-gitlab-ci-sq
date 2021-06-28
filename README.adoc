@@ -1,5 +1,8 @@
 = C++ example project scanned on SonarQube using GitLab CI
 
+:note-caption: :information_source:
+NOTE: This simple example ignores https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-7[analysis cache] and https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[multithreaded execution] both of which can boost analysis significantly.
+
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
 
 . Create a `sonar-project.properties` file to store your configuration
@@ -26,6 +29,8 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-7[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[Configuring multithreaded execution]
 
 = Linux\CMake
 
