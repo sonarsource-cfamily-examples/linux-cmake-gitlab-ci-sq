@@ -71,11 +71,17 @@ Running on the following CI services:
 * https://github.com/sonarsource-cfamily-examples?q=jenkins[Jenkins]
 * https://github.com/sonarsource-cfamily-examples?q=gitlab[GitLab CI]
 * https://github.com/sonarsource-cfamily-examples?q=bitbucket[BitBucket Pipelines]
+* Additionally, https://github.com/orgs/sonarsource-cfamily-examples/repositories?q=otherci[generic examples] demonstrate integration with other CIs and https://github.com/orgs/sonarsource-cfamily-examples/repositories?q=manual[manual-configuration examples] should help you if you are running locally.
 
 Configured for analysis on:
 
 * https://github.com/sonarsource-cfamily-examples?q=-sq[SonarQube]
 * https://github.com/sonarsource-cfamily-examples?q=-sc[SonarCloud]
+
+You can find also a few examples demonstrating:
+
+* https://github.com/orgs/sonarsource-cfamily-examples/repositories?q=compdb[The use of Compilation Database (compile_commands.json)]
+* https://github.com/orgs/sonarsource-cfamily-examples/repositories?q=topic%3Acoverage[Test coverage]
 
 
 See link:./examples-structure.adoc[examples-structure.adoc] for a description of the structure of https://github.com/sonarsource-cfamily-examples[this GitHub organization] and the relations between its different repositories.
