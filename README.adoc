@@ -1,7 +1,5 @@
 = C++ example project scanned on SonarQube using GitLab CI
 
-:note-caption: :information_source:
-NOTE: This simple example ignores https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-7[analysis cache] and https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[multithreaded execution] both of which can boost analysis significantly.
 
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
 
@@ -10,7 +8,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube https
 .. Configure SonarQube server url (e.g.: https://example.com:9000)
 .. As the `.pre` stage:
 ... Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
-... Download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper] from SonarQube server
+... Download the https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-build-wrapper[Build Wrapper] from SonarQube server
 ... Push both binaries to cache, so they can be used in next step
 .. As part of the `build` stage: 
 ... Install cmake package
@@ -29,8 +27,8 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-7[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-8[Configuring multithreaded execution]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
 
 = Linux\CMake
 
@@ -45,7 +43,7 @@ make
 
 = Code Description
 
-An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, MacOS, and Windows.
+An example of a flawed C++ code. The https://github.com/sonarsource-cfamily-examples/code[code repository] is meant to be compiled with different build systems using different CI pipelines on Linux, macOS, and Windows.
 
 The https://github.com/sonarsource-cfamily-examples/code[code repository] is forked into other repositories in https://github.com/sonarsource-cfamily-examples[this collection] to add a specific build system, platform, and CI.
 The downstream repositories are analyzed either with https://www.sonarqube.org/[SonarQube] or https://sonarcloud.io/[SonarCloud].
@@ -53,7 +51,7 @@ The downstream repositories are analyzed either with https://www.sonarqube.org/[
 You can find examples for:
 
 * https://github.com/sonarsource-cfamily-examples?q=linux[Linux]
-* https://github.com/sonarsource-cfamily-examples?q=macos[MacOS]
+* https://github.com/sonarsource-cfamily-examples?q=macos[macOS]
 * https://github.com/sonarsource-cfamily-examples?q=windows[Windows]
 
 Using the following build systems:
