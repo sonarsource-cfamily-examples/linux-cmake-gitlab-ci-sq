@@ -2,7 +2,7 @@ image: gcc
 
 variables:
   SONAR_SERVER_URL: https://next.sonarqube.com/sonarqube # Replace with your SonarQube server URL
-  SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
+  SONAR_SCANNER_VERSION: 4.8.0.2856 # Find the latest version in the "Linux" link on this page:
                                     # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
   BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
   
