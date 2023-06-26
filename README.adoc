@@ -1,5 +1,9 @@
 = C++ example project scanned on SonarQube using GitLab CI
-
+// URIs:
+:uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gitlab-ci-sq_AYAYsVNEMi_-8diYBjHV
+:img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_linux-cmake-gitlab-ci-sq_AYAYsVNEMi_-8diYBjHV&metric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
+:uri-build-status: https://gitlab.com/sonarsource/cfamily/linux-cmake-gitlab-ci-sq/-/pipelines
+:img-build-status: https://gitlab.com/sonarsource/cfamily/linux-cmake-gitlab-ci-sq/badges/main/pipeline.svg
 
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
 
