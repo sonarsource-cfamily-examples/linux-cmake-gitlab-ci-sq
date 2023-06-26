@@ -5,6 +5,11 @@
 :uri-build-status: https://gitlab.com/sonarsource/cfamily/linux-cmake-gitlab-ci-sq/-/pipelines
 :img-build-status: https://gitlab.com/sonarsource/cfamily/linux-cmake-gitlab-ci-sq/badges/main/pipeline.svg
 
+image:{img-build-status}[Build Status, link={uri-build-status}]
+image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
+
+*This project is analysed on https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_linux-cmake-gitlab-ci-sq_AYAYsVNEMi_-8diYBjHV[SonarQube]!*
+
 It is very easy to analyze a C, C++ and Objective-C project with SonarQube https://docs.sonarqube.org/latest/analysis/gitlab-integration/[on GitLab CI]:
 
 . Create a `sonar-project.properties` file to store your configuration
