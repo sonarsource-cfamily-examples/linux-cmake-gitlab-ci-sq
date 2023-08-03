@@ -1,27 +1,33 @@
 image: gcc
 
 variables:
-  SONAR_SERVER_URL: https://next.sonarqube.com/sonarqube # Replace with your SonarQube server URL
+  PROJECT_KEY: project_identifier # The SonarQube project key
   SONAR_SCANNER_VERSION: 4.8.0.2856 # Find the latest version in the "Linux" link on this page:
-                                    # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+  # https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
   BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
-  
-  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
-  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+
+  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar" # Defines the location of the analysis task cache
+  GIT_DEPTH: "0" # Tells git to fetch all the branches of the project, required by the analysis task
   # note that SONAR_TOKEN is transmitted to the environment through Gitlab CI
+
+stages:
+  - get-sonar-binaries
+  - build
+  - sonarqube-check
+  - sonarqube-vulnerability-report
 
 get-sonar-binaries:
   # this job download and unpacks the build-wrapper and the sonar-scanner
   # in this example it is done for every build.
   # This can be optimized by caching the files or better, by including them, in the build docker image.
-  stage: .pre
+  stage: get-sonar-binaries
   script:
     # Download sonar-scanner
     - curl -sSLo sonar-scanner.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip"
-    - unzip -o sonar-scanner.zip 
+    - unzip -o sonar-scanner.zip
     - mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux sonar-scanner
     # Download build-wrapper
-    - curl -sSLo build-wrapper.zip "${SONAR_SERVER_URL}/static/cpp/build-wrapper-linux-x86.zip" 
+    - curl -sSLo build-wrapper.zip "${SONAR_HOST_URL}/static/cpp/build-wrapper-linux-x86.zip"
     - unzip -o build-wrapper.zip
     - mv build-wrapper-linux-x86 build-wrapper
   cache:
@@ -35,7 +41,7 @@ build:
   stage: build
   # install the necessary build tools when needed
   before_script:
-     - apt update && apt -y install cmake
+    - apt update && apt -y install cmake
   script:
     # prepare the build tree
     - mkdir build
@@ -54,7 +60,7 @@ build:
       - "${BUILD_WRAPPER_OUT_DIR}"
 
 sonarqube-check:
-  stage: .post
+  stage: sonarqube-check
   cache:
     policy: pull
     key: "${CI_COMMIT_SHORT_SHA}"
@@ -62,8 +68,26 @@ sonarqube-check:
       - sonar-scanner/
       - "${BUILD_WRAPPER_OUT_DIR}"
   script:
-    - sonar-scanner/bin/sonar-scanner --define sonar.host.url="${SONAR_SERVER_URL}" --define sonar.cfamily.build-wrapper-output="${BUILD_WRAPPER_OUT_DIR}"
+    - sonar-scanner/bin/sonar-scanner --define sonar.host.url="${SONAR_HOST_URL}" --define sonar.cfamily.build-wrapper-output="${BUILD_WRAPPER_OUT_DIR}"
   only:
     - merge_requests
+    - master
     - main
     - develop
+
+sonarqube-vulnerability-report:
+  stage: sonarqube-vulnerability-report
+  image: alpine:latest
+  script: 'curl -u "$SONAR_TOKEN:" "$SONAR_HOST_URL/api/issues/gitlab_sast_export?projectKey=$PROJECT_KEY&branch=$CI_COMMIT_BRANCH&pullRequest=$CI_MERGE_REQUEST_IID" -o gl-sast-sonar-report.json'
+  allow_failure: true
+  only:
+    - merge_requests
+    - master
+    - main
+    - develop
+  artifacts:
+    expire_in: 1 day
+    reports:
+      sast: gl-sast-sonar-report.json
+  dependencies:
+    - sonarqube-check
