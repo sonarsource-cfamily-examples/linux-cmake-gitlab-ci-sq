@@ -17,7 +17,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube https
 .. Configure SonarQube server url (e.g.: https://example.com:9000)
 .. As the `.pre` stage:
 ... Download the https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/[Sonar Scanner]
-... Download the https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-build-wrapper[Build Wrapper] from SonarQube server
+... Download the https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/prerequisites/#using-buildwrapper[Build Wrapper] from SonarQube server
 ... Push both binaries to cache, so they can be used in next step
 .. As part of the `build` stage: 
 ... Install cmake package
@@ -36,8 +36,8 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
+- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#parallel-code-scan[Configuring multithreaded execution]
 
 = Linux\CMake
 
