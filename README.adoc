@@ -26,7 +26,14 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube https
 ... Push Sonar Scanner and build Wrapper output directory to the cache
 .. As part of the `.post` stage:
 ... Pull build wrapper output and Sonar Scanner from cache
-... Run `sonar-scanner` on build wrapper output
+... Run `sonar-scanner`, specifying:
++
+--
+** the property `sonar.cfamily.compile-commands` with, as its value, `bw-output/compile_commands.json`, if you are using SonarQube version 10.6 or later 
+** the property `sonar.cfamily.build-wrapper-output`, with value `bw-output`, if you are using SonarQube version 10.5 or earlier, as build-wrapper did not generate a `compile_commands.json` file before SonarQube 10.6
+--
++
+Noting that `bw-output` is the build wrapper output directory that you pulled from cache.
 . Make sure that you have your token stored as a CI variable in your project (`SONAR_TOKEN`). You can https://docs.sonarqube.org/latest/user-guide/user-token/[generate and use] new tokens in SonarQube.
 
 
