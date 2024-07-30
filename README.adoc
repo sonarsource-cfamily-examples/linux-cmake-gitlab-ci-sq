@@ -41,10 +41,10 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation overview of the C, C++ and Objective-C analyzer]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
-- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#parallel-code-scan[Configuring multithreaded execution]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database (compile_commands.json)]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/running-the-analysis/[Running the analysis in Compilation Database mode]
 
 = Linux\CMake
 
